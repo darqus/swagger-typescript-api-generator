@@ -97,12 +97,16 @@ The generated API client provides access to all Fake REST API endpoints:
 
 ```bash
 npm run build
+#or
+yarn build
 ```
 
 ### Running
 
 ```bash
 npm run start
+#or
+yarn start
 ```
 
 ## License
