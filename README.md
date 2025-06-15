@@ -32,35 +32,44 @@ npm run generate -- "https://custom-url-to-swagger.json" "./output/path.ts"
 ### Example Usage of Generated API Client
 
 ```typescript
-import { ApiClient } from './generated/api-types';
+import { ApiClient } from './generated/api-types'
 
-async function main() {
+const main = async () => {
   // Initialize the API client with Fake REST API base URL
-  const api = new ApiClient('https://fakerestapi.azurewebsites.net');
+  const api = new ApiClient('https://fakerestapi.azurewebsites.net')
 
   try {
-    // Get all activities
-    const activities = await api.activitiesApi.getActivities();
-    console.log('Activities:', activities);
-    
-    // Get a specific book
-    const book = await api.booksApi.getBook(1);
-    console.log('Book 1:', book);
-    
-    // Create a new author
-    const newAuthor = await api.authorsApi.createAuthor({
-      id: 0,
-      idBook: 1,
-      firstName: "John",
-      lastName: "Doe"
-    });
-    console.log('Created author:', newAuthor);
-  } catch (error) {
-    console.error('Error:', error);
+    // Example API call using the generated client
+    // This is just an example - replace with actual endpoints from Fake REST API
+    // const activities = await api.activitiesApi.getActivities()
+    // console.log('Activities:', activities)
+
+    // const books = await api.booksApi.getBooks()
+    // console.log('Books:', books)
+
+    // const authors = await api.authorsApi.getAuthors()
+    // console.log('Authors:', authors)
+
+    console.log('Fake REST API client initialized successfully')
+    console.log('Available API categories:')
+
+    // List all available API categories
+    Object.keys(api).forEach((key) => {
+      if (key.endsWith('Api')) {
+        console.log(`- ${key}`)
+      }
+    })
+
+    console.log('\nReady to make API calls to Fake REST API!')
+  } catch (error: unknown) {
+    console.error(
+      'Error:',
+      error instanceof Error ? error.message : String(error),
+    )
   }
 }
 
-main();
+main()
 ```
 
 ## Available Fake REST API Endpoints
