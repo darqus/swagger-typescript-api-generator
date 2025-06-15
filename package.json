@@ -1,0 +1,28 @@
+{
+  "name": "swagger-typescript-api-generator",
+  "version": "1.0.0",
+  "description": "A tool to generate TypeScript API types from Swagger/OpenAPI specifications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "generate": "ts-node src/index.ts",
+    "generate-and-copy": "./generate-and-copy.sh"
+  },
+  "keywords": [
+    "swagger",
+    "openapi",
+    "typescript",
+    "api",
+    "generator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
