@@ -15,7 +15,7 @@ class ApiClient {
 /**
  * Example of using the generated API client with Fake REST API
  */
-async function main() {
+const main = async() => {
   // Initialize the API client with Fake REST API base URL
   const api = new ApiClient('https://fakerestapi.azurewebsites.net')
 
